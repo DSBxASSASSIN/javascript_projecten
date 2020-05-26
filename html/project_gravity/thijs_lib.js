@@ -1,16 +1,16 @@
 class CelestialBody{
-    constructor(pos, radius, vel, acc, r, g, b){
-	this.pos = pos;
-	this.radius = radius;
-	this.vel = vel || new Vector2(0, 0);	
-	this.acc = acc || new Vector2(0, 0);
-	this.r = r || 255;
-	this.g = g || 255;
-	this.b = b || 255;
+	constructor(pos, radius, vel, acc, r, g, b){
+		this.pos = pos;
+		this.radius = radius;
+		this.vel = vel;	
+		this.acc = acc;
+		this.r = r || 0;
+		this.g = g || 0;
+		this.b = b || 0;
     }
 
     get color(){
-		return `rbga(${this.r}, ${this.g}, ${this.b})`;
+        return `rgba(${this.r}, ${this.g}, ${this.b})`; 
     }
 
     draw(ctx){
@@ -31,12 +31,12 @@ class CelestialBody{
 
 class Vector2{
     constructor(dx, dy){
-	this.dx = dx;
-	this.dy = dy;
+		this.dx = dx;
+		this.dy = dy;
     }
 
     add(Vector){
-	this.dx += Vector.dx;
-	this.dy += Vector.dy;
+		this.dx += Vector.dx;
+		this.dy += Vector.dy;
     }
 };
